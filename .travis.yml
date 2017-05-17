@@ -4,9 +4,9 @@ install:
 before_script:
   - sudo apt-get install python
   - git clone https://github.com/CxxTest/cxxtest
-  - ./cxxtest/bin/cxxtestgen –error-print --runner=ErrorPrinter -o runner.cc test/test1.h
+  - ./cxxtest/bin/cxxtestgen –error-print --runner=ErrorPrinter -o runner.cc `ls test | grep .h`
 script:
-  - mkdir build && cd build && cmake .. && make && make test
+  - mkdir build && cd build && cmake .. && make && ./Test
 notifications:
   email:
     - kam.cpp@gmail.com

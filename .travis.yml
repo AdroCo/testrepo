@@ -2,3 +2,6 @@ language: c++
 install:
 script:
   - echo "Hello"
+notifications:
+  email:
+    - kam.cpp@gmail.com
